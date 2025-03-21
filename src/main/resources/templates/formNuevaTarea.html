@@ -4,7 +4,7 @@
 <head th:replace="fragments :: head (titulo='Login')"></head>
 
 <body>
-<header th:replace="menu-bar :: menu-bar(id = ${usuario.id},nombre = ${usuario.nombre})"></header>
+<header th:replace="menu-bar :: menu-bar(id = ${usuario.id},nombre = ${usuario.nombre},userIsLoggedIn=true)"></header>
 <div class="container-fluid">
 
     <h2 th:text="'Nueva tarea para el usuario ' + ${usuario.getNombre()}"></h2>
