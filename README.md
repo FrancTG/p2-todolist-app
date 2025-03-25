@@ -2,6 +2,7 @@
 
 ToDoList app usign Spring Boot and Thymeleaf templates.
 * Trello board: https://trello.com/b/B3sgwNQz/p2-to-do-list-app
+* Docker: https://hub.docker.com/repository/docker/franctg/p2-todolistapp/general
 
 ## Requirements
 
