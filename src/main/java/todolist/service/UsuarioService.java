@@ -72,4 +72,8 @@ public class UsuarioService {
             return modelMapper.map(usuario, UsuarioData.class);
         }
     }
+
+    public Iterable<Usuario> getAllUsers() {
+        return usuarioRepository.findAll();
+    }
 }

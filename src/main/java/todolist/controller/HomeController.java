@@ -30,4 +30,10 @@ public class HomeController {
         model.addAttribute("user",user);
         return "about";
     }
+
+    @GetMapping("registered")
+    public String registered(Model model) {
+        model.addAttribute("users",usuarioService.getAllUsers());
+        return "registered";
+    }
 }
