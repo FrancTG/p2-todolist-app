@@ -76,4 +76,13 @@ public class UsuarioService {
     public Iterable<Usuario> getAllUsers() {
         return usuarioRepository.findAll();
     }
+
+    public boolean adminUserAlreadyExists() {
+        for (Usuario user : usuarioRepository.findAll()) {
+            if (user.getIsAdmin()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

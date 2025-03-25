@@ -25,6 +25,8 @@ public class Usuario implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
 
+    private boolean isAdmin;
+
     // La relación es lazy por defecto,
     // es necesario acceder a la lista de tareas para que se carguen
     @OneToMany(mappedBy = "usuario")
@@ -85,6 +87,14 @@ public class Usuario implements Serializable {
 
     public Set<Tarea> getTareas() {
         return tareas;
+    }
+
+    public boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     // Método helper para añadir una tarea a la lista y establecer la relación inversa
