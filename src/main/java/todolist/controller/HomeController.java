@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import todolist.authentication.ManagerUserSession;
 import todolist.dto.UsuarioData;
 import todolist.service.UsuarioService;
@@ -35,5 +36,11 @@ public class HomeController {
     public String registered(Model model) {
         model.addAttribute("users",usuarioService.getAllUsers());
         return "registered";
+    }
+
+    @GetMapping("/registered/{id}")
+    public String registeredUserDetails(@PathVariable(value="id") Long idUsuario,Model model) {
+        model.addAttribute("user",usuarioService.findById(idUsuario));
+        return "registeredUserDetails";
     }
 }
