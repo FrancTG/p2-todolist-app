@@ -86,7 +86,13 @@ public class LoginController {
         usuario.setAdmin(registroData.getIsAdmin());
 
         usuarioService.registrar(usuario);
-        return "redirect:/login";
+
+        if (registroData.getIsAdmin()) {
+            return "redirect:/registered";
+        } else {
+            return "redirect:/login";
+        }
+
    }
 
    @GetMapping("/logout")
